@@ -48,3 +48,6 @@ exclude:
   - flake.nix
   - flake.lock
   - gemset.nix
+
+# Configure Jekyll to Generate Pretty URLs
+permalink: pretty
