@@ -80,6 +80,14 @@
               jekyll server --livereload
             '';
           }
+          {
+            name = "site:deploy";
+            help = "Deploy the website";
+            command = ''
+              bundle exec jekyll build && \
+              ${pkgs.rsync}/bin/rsync -v -rz --checksum --delete ./_site/ root@dantooine:/var/www/nixup.io
+            '';
+          }
         ];
       };
     });
